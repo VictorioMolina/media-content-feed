@@ -18,11 +18,11 @@ export default class CardList extends React.Component {
         ).isRequired,
     }
 
-    renderItem = (obj) => (
+    renderItem = ({item: {id, author}}) => (
         <Card
-            fullname={obj.item.author}
+            fullname={author}
             image={{
-                uri: getImageFromId(obj.item.id)
+                uri: getImageFromId(id)
             }}
             linkText="Comments"
             onPressLinkText={() => console.log("Pressed!")}
